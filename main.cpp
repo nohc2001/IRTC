@@ -4,11 +4,11 @@ using namespace std;
 
 FM_System0* fm;
 
-constexpr char filename[128] = "tables\episode1.txt";
-//constexpr char filename[128] = "tables\Month1.txt";
-//constexpr char filename[128] = "tables\Semester1.txt";
-//constexpr char filename[128] = "tables\School.txt";
-//constexpr char filename[128] = "tables\Vacation1.txt";
+//constexpr char filename[128] = "tables\\episode1.txt";
+//constexpr char filename[128] = "tables\\Month1.txt";
+constexpr char filename[128] = "tables/Semester1.txt";
+//constexpr char filename[128] = "tables\\School.txt";
+//constexpr char filename[128] = "tables\\Vacation1.txt";
 
 int main(){
     std::wcout.sync_with_stdio(false);
@@ -132,8 +132,12 @@ int main(){
             ValuePin* vp = (ValuePin*)fm->_New(sizeof(ValuePin), true);
             vp->pintype = 's';
             vp->p.str.time = seektime;
-            vp->p.str.value = (wchar_t*)fm->_New(sizeof(wchar_t)*(wcslen(ValueWStr)+2), true);
-            wcscpy(vp->p.str.value, ValueWStr);
+            int len = wcslen(ValueWStr);
+            vp->p.str.value = (wchar_t*)fm->_New(sizeof(wchar_t)*(len+2), true);
+            for(int i=0;i<len+1;++i){
+                vp->p.str.value[i] = ValueWStr[i];
+            }
+            //wcscpy(vp->p.str.value, ValueWStr);
 
             choosed->input(vp);
         }
