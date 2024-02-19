@@ -1,10 +1,29 @@
 #define H_IRTC
+#include <iostream>
+#include <fstream>
+#include <math.h>
+#include <locale>
+#include <codecvt>
 #include <math.h>
 
 #ifndef H_UTILL_FREEMEMORY
 #include "Utill_FreeMemory.h"
 #endif
 using namespace freemem;
+
+std::string wstr_to_utf8(wchar_t * wstr)
+{
+	std::wstring_convert < std::codecvt_utf8 < wchar_t >> converter;
+	std::string utf8Str = converter.to_bytes(wstr);
+	return utf8Str;
+}
+
+std::wstring utf8_to_wstr(char * utf8str)
+{
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    std::wstring wideStr = converter.from_bytes(utf8str);
+    return wideStr;
+}
 
 enum class IRTC
 {
@@ -345,5 +364,71 @@ class ChangingValue
 				return pin;
 			}
 		}
+	}
+};
+
+class IRTC_Table
+{
+  public:
+	vecarr < ChangingValue * >table;
+
+	IRTC_Table()
+	{
+	}
+	virtual ~ IRTC_Table()
+	{
+	}
+
+	void init()
+	{
+		table.NULLState();
+		table.Init(8, false);
+	}
+	
+	void SaveData(const char* filename){
+		if(table.size()==0) return;
+		FILE* fp = fopen(filename, "w");
+		fprintf(fp, "%d\n", table.size());
+		for(int k=0;k<table.size();++k){
+			ChangingValue* cv = table.at(k);
+			fprintf(fp, "%s %d %d %d %d\n", wstr_to_utf8(cv->name.Arr).c_str(), cv->startTime, cv->onlyTI, cv->use_2time_len, cv->staticInput.size());
+			for(int i=0;i<cv->staticInput.size(); ++i){
+				ValuePin* pin = cv->staticInput.at(i);
+				fprintf(fp, "%d %s\n", pin->p.str.time, wstr_to_utf8(pin->p.str.value).c_str());
+			}
+		}
+		fclose(fp);
+	}
+	
+	void LoadData(const char* filename)
+	{
+		FILE* fp = fopen(filename, "r");
+		int siz = 0;
+		fscanf(fp, "%d", &siz);
+		table.Init(siz + 8, false);
+		wchar_t wstr[128] = {};
+		char str[128] = {};
+		for(int k=0;k<siz;++k){
+			ChangingValue* cv = (ChangingValue*)fm->_New(sizeof(ChangingValue), true);
+			int sisize = 0;
+			fscanf(fp, "%s", str);
+			fscanf(fp, "%d", &cv->startTime);
+			fscanf(fp, "%d", &cv->onlyTI);
+			fscanf(fp, "%d", &cv->use_2time_len);
+			fscanf(fp, "%d", &sisize);
+			wcscpy(wstr, utf8_to_wstr(str).c_str());
+			cv->Init(wstr, cv->startTime, cv->onlyTI, fm);
+			for(int i=0;i<sisize; ++i){
+				ValuePin* pin = (ValuePin*)fm->_New(sizeof(ValuePin), true);
+				fscanf(fp, "%d", &pin->p.str.time);
+				fscanf(fp, "%s", str);
+				wcscpy(wstr, utf8_to_wstr(str).c_str());
+				pin->p.str.value = (wchar_t*)fm->_New(sizeof(wchar_t)*wcslen(wstr)+8, true);
+				wcscpy(pin->p.str.value, wstr);
+				cv->staticInput.push_back(pin);
+			}
+			table.push_back(cv);
+		}
+		fclose(fp);
 	}
 };
