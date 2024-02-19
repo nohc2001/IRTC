@@ -4,11 +4,11 @@ using namespace std;
 
 FM_System0* fm;
 
-constexpr char filename[128] = "episode1.txt";
-//constexpr char filename[128] = "Month1.txt";
-//constexpr char filename[128] = "Semester1.txt";
-//constexpr char filename[128] = "School.txt";
-//constexpr char filename[128] = "Vacation1.txt";
+constexpr char filename[128] = "tables\episode1.txt";
+//constexpr char filename[128] = "tables\Month1.txt";
+//constexpr char filename[128] = "tables\Semester1.txt";
+//constexpr char filename[128] = "tables\School.txt";
+//constexpr char filename[128] = "tables\Vacation1.txt";
 
 int main(){
     std::wcout.sync_with_stdio(false);
