@@ -385,10 +385,10 @@ class IRTC_Table
 	void SaveData(const char* filename){
 		if(table.size()==0) return;
 		FILE* fp = fopen(filename, "w");
-		fprintf(fp, "%d\n", table.size());
+		fprintf(fp, "%d\n", (int)table.size());
 		for(int k=0;k<table.size();++k){
 			ChangingValue* cv = table.at(k);
-			fprintf(fp, "%s %d %d %d %d\n", wstr_to_utf8(cv->name.Arr).c_str(), cv->startTime, cv->onlyTI, cv->use_2time_len, cv->staticInput.size());
+			fprintf(fp, "%s %d %d %d %d\n", wstr_to_utf8(cv->name.Arr).c_str(), cv->startTime, cv->onlyTI, cv->use_2time_len, (int)cv->staticInput.size());
 			for(int i=0;i<cv->staticInput.size(); ++i){
 				ValuePin* pin = cv->staticInput.at(i);
 				fprintf(fp, "%d %s\n", pin->p.str.time, wstr_to_utf8(pin->p.str.value).c_str());
@@ -414,7 +414,7 @@ class IRTC_Table
 			fscanf(fp, "%d", &cv->use_2time_len);
 			fscanf(fp, "%d", &sisize);
 			wcscpy(wstr, utf8_to_wstr(str).c_str());
-			cv->Init(wstr, cv->startTime, cv->onlyTI, fm);
+			cv->Init(wstr, cv->startTime, cv->onlyTI);
 			for(int i=0;i<sisize; ++i){
 				ValuePin* pin = (ValuePin*)fm->_New(sizeof(ValuePin), true);
 				fscanf(fp, "%d", &pin->p.str.time);

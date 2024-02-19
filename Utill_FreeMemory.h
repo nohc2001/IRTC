@@ -271,8 +271,8 @@ namespace freemem
 			dbg_bytesize = dbgs / 8;
 			sumDataSiz = (dbg_bitsize + 1) * realDataSiz / (dbg_bitsize);
 			DataPtr = new byte8[sumDataSiz];
-			id = FM_Model1::updateid;
-			++FM_Model1::updateid;
+			//id = FM_Model1::updateid;
+			//++FM_Model1::updateid;
 		}
 
 		bool isValid(unsigned int address)
