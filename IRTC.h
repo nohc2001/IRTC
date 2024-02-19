@@ -68,8 +68,6 @@ struct IRTCV
 class ChangingValue
 {
   public:
-	FM_System0 * fm;
-
 	vecarr < ValuePin * >staticInput;
 	
 	lwstr name;
@@ -86,9 +84,8 @@ class ChangingValue
 	{
 	}
 
-	void Init(wchar_t *vname, int starttime, bool onlyti, FM_System0 * fms)
+	void Init(wchar_t *vname, int starttime, bool onlyti)
 	{
-		fm = fms;
 		name.Init(32, false);
 		name = vname;
 		startTime = starttime;
