@@ -1424,6 +1424,12 @@ namespace freemem
 		}
 	};
 
+}
+
+extern freemem::FM_System0* fm;
+
+namespace freemem{
+
 	class BitArray
 	{
 	  public:
