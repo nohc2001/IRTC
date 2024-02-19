@@ -35,6 +35,29 @@ enum class IRTC
 	TI = 5
 };
 
+void coutIRTC(IRTC irtc){
+	switch(irtc){
+		case IRTC::NONE:
+		cout << "None";
+		break;
+		case IRTC::I:
+		cout << "Intro";
+		break;
+		case IRTC::R:
+		cout << "Repeat";
+		break;
+		case IRTC::T:
+		cout << "Turn";
+		break;
+		case IRTC::C:
+		cout << "Conclude";
+		break;
+		case IRTC::TI:
+		cout << "TurnToIntro";
+		break;
+	}
+}
+
 struct pin_str
 {
 	int time;
