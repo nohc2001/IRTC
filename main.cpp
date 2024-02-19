@@ -6,6 +6,11 @@ FM_System0* fm;
 
 constexpr char filename[128] = "episode.txt";
 int main(){
+    std::wcout.sync_with_stdio(false);
+    std::wcout.imbue(std::locale("en_US.utf8"));
+    std::wcin.sync_with_stdio(false);
+    std::wcin.imbue(std::locale("en_US.utf8"));
+    
     fm = new FM_System0();
     fm->SetHeapData(4096, 4096, 40960, 40960);
     IRTC_Table table;
@@ -14,6 +19,7 @@ int main(){
 
     while (true)
     {
+        cout << "\n--------------------------------------------------------\n" << endl;
         cout << "Listing ChangeV - ChangeV array size = " << table.table.size() << endl;
         for(int i=0;i<table.table.size();++i){
             ChangingValue* cv = table.table.at(i);
@@ -29,11 +35,12 @@ int main(){
             ChangingValue* cv = (ChangingValue*)fm->_New(sizeof(ChangingValue), true);
             
             wchar_t NameOfChangeV[128] = {};
+            char NameOfChangeV_input[128] = {};
             int start_time = 0;
             bool turn_to_intro = false;
             cout << "Enter Name Of ChangeV : " << endl;
             wcin >> NameOfChangeV;
-
+            
             cout << "Enter Start Time Of ChangeV : " << endl;
             cin >> start_time;
 
