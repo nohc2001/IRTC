@@ -391,6 +391,7 @@ class IRTC_Table
 {
   public:
 	vecarr < ChangingValue * >table;
+	
 
 	IRTC_Table()
 	{

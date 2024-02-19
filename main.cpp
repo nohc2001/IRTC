@@ -4,11 +4,11 @@ using namespace std;
 
 FM_System0* fm;
 
-//constexpr char filename[128] = "episode1.txt";
+constexpr char filename[128] = "episode1.txt";
 //constexpr char filename[128] = "Month1.txt";
 //constexpr char filename[128] = "Semester1.txt";
 //constexpr char filename[128] = "School.txt";
-constexpr char filename[128] = "episode.txt";
+//constexpr char filename[128] = "Vacation1.txt";
 
 int main(){
     std::wcout.sync_with_stdio(false);
@@ -133,6 +133,7 @@ int main(){
             vp->pintype = 's';
             vp->p.str.time = seektime;
             vp->p.str.value = (wchar_t*)fm->_New(sizeof(wchar_t)*(wcslen(ValueWStr)+2), true);
+            wcscpy(vp->p.str.value, ValueWStr);
 
             choosed->input(vp);
         }
