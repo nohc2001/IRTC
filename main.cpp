@@ -6,9 +6,11 @@ FM_System0* fm;
 
 //constexpr char filename[128] = "tables\\episode1.txt";
 //constexpr char filename[128] = "tables\\Month1.txt";
-constexpr char filename[128] = "tables/Semester1.txt";
+//constexpr char filename[128] = "tables/Semester1.txt";
 //constexpr char filename[128] = "tables\\School.txt";
 //constexpr char filename[128] = "tables\\Vacation1.txt";
+
+constexpr char filename[128] = "tables/10sec/ep2irtc.txt";
 
 int main(){
     std::wcout.sync_with_stdio(false);
@@ -32,7 +34,7 @@ int main(){
             int tn = (cv->use_2time_len) ? 2 : 1;
             wcout << L"|Name : " << cv->name.c_str() << L"\t|startTime : " << cv->startTime << L"\t|TurnToIntro : " << cv->onlyTI << L"\t|Mul : " << tn << L"\t|ValueCount : " << cv->staticInput.size() << endl;
         }
-        cout << "choose behavier] \n1] add ChangeV\n2] seek value with time in ChangeV\n3] add value to ChangeV\n0] save and end program \n : " << endl;
+        cout << "choose behavier] \n1] add ChangeV\n2] seek value with time in ChangeV\n3] add value to ChangeV\n4] show timelines\n0] save and end program \n : " << endl;
         int input = 0;
         cin >> input;
         switch (input)
@@ -140,6 +142,44 @@ int main(){
             //wcscpy(vp->p.str.value, ValueWStr);
 
             choosed->input(vp);
+        }
+        break;
+        case 4:
+        {
+            int pt = 0;
+            while (true)
+            {
+                cout << "presentTime : " << pt << endl;
+                for (int i = 0; i < table.table.size(); ++i)
+                {
+                    ChangingValue *cv = table.table.at(i);
+                    wcout << L"[" << cv->name.c_str() << L"] : " << flush;
+                    IRTCV irtcv = cv->GetIRTC(pt);
+                    cout << "level : " << irtcv.start_level << "\tphaze : ";
+                    coutIRTC(irtcv.cv[0]);
+                    cout << "[";
+                    coutIRTC(irtcv.cv[1]);
+                    cout << "] \t:" << flush;
+
+                    ValuePin *vp = cv->GetValue(pt);
+                    if (vp != nullptr)
+                    {
+                        wchar_t *temp = vp->p.str.value;
+                        wcout << L"value : " << temp << endl;
+                    }
+                    else
+                    {
+                        cout << "value : (Blank)" << endl;
+                    }
+                }
+
+                cout << "change time(-1 : exit) : " << endl;
+                cin >> pt;
+                if (pt == -1)
+                {
+                    break;
+                }
+            }
         }
         break;
         default:
