@@ -10,7 +10,8 @@ FM_System0* fm;
 //constexpr char filename[128] = "tables\\School.txt";
 //constexpr char filename[128] = "tables\\Vacation1.txt";
 
-constexpr char filename[128] = "tables/10sec/ep2irtc.txt";
+//constexpr char filename[128] = "tables/10sec/ep2irtc.txt";
+constexpr char filename[128] = "tables/10sec/10sec_irtc.txt";
 
 int main(){
     std::wcout.sync_with_stdio(false);
