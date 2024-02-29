@@ -66,3 +66,227 @@
 요약 : 강력한 적이 주인공을 방해하고, 고난을 맞이하게 됨. 
 주인공은 노력하고, 소개 되었던 주변인의 심리적 규칙을 발견하게 됨.
 반면 동사2, 오브젝트2의 관계를 새롭게 발견.
+
+
+8
+presentTime : 8
+[과제_동사] : Turn[Intro]       :동사의핵심을짚어냄
+[전개_악역] : Repeat[None]      :악역처치
+[전개_노력전진] : Repeat[None]  :목표나아감
+[과제_오브젝트] : Repeat[None]  :오브젝트소개
+[과제_난이도] : TurnToIntro[Intro]      :중간
+[전개_주변인물] : TurnToIntro[Intro]    :인물이주인공에게도움을줌
+[전개_처벌보상] : TurnToIntro[Intro]    :예상치못한보상
+[과제_심리규칙] : Repeat[Intro]         :인물의심리적규칙을소개
+[전개_예상] : Intro[Intro]      :긍정적결말암시
+[문장_시점] : None[None]        :(Blank)
+change time(-1 : exit) : 
+9
+presentTime : 9
+[과제_동사] : Turn[Intro]       :동사의활용
+[전개_악역] : Repeat[None]      :악역처치
+[전개_노력전진] : Repeat[None]  :목표나아감
+[과제_오브젝트] : Repeat[None]  :오브젝트소개
+[과제_난이도] : TurnToIntro[Intro]      :쉬움
+[전개_주변인물] : Repeat[Intro]         :인물이주인공에게도움을줌
+[전개_처벌보상] : Repeat[Intro]         :예상치못한보상
+[과제_심리규칙] : Repeat[Intro]         :인물의심리적규칙을소개
+[전개_예상] : Repeat[Intro]     :긍정적결말암시
+[문장_시점] : Intro[Intro]      :주인공
+change time(-1 : exit) : 
+10
+presentTime : 10
+[과제_동사] : Turn[Intro]       :새로운동사를발견
+[전개_악역] : Repeat[None]      :수준1_강력한적_등장
+[전개_노력전진] : Repeat[None]  :전진이멈춤
+[과제_오브젝트] : Repeat[None]  :오브젝트의발전
+[과제_난이도] : Repeat[Intro]   :중간
+[전개_주변인물] : Turn[Intro]   :주인공을배신
+[전개_처벌보상] : Turn[Intro]   :고난
+[과제_심리규칙] : Turn[Intro]   :심리규칙활용
+[전개_예상] : Turn[Intro]       :부정적결말암시
+[문장_시점] : Repeat[None]      :주인공
+change time(-1 : exit) : 
+11
+presentTime : 11
+[과제_동사] : Turn[Intro]       :동사의활용
+[전개_악역] : Repeat[None]      :주인공을방해
+[전개_노력전진] : Repeat[None]  :노력
+[과제_오브젝트] : Repeat[None]  :오브젝트활용
+[과제_난이도] : Repeat[Intro]   :쉬움
+[전개_주변인물] : Conclude[Intro]       :(Blank) > 새로운 인물 소개
+[전개_처벌보상] : Conclude[Intro]       :(Blank) > 고난
+[과제_심리규칙] : Conclude[Intro]       :(Blank) > 심리규칙의 소개
+[전개_예상] : Conclude[Intro]   :(Blank) > 긍정적결말암시
+[문장_시점] : Repeat[None]      :주인공
+change time(-1 : exit) : 
+
+12
+presentTime : 12
+[과제_동사] : Conclude[Intro]   :(Blank) > 동사의 활용
+[전개_악역] : Repeat[None]      :악역처치
+[전개_노력전진] : Repeat[None]  :목표나아감
+[과제_오브젝트] : Repeat[None]  :오브젝트소개
+[과제_난이도] : Turn[Intro]     :(Blank) > 어려움
+[전개_주변인물] : Repeat[None]  :인물이주인공에게도움을줌
+[전개_처벌보상] : Repeat[None]  :예상치못한보상
+[과제_심리규칙] : Repeat[None]  :인물의심리적규칙을소개
+[전개_예상] : Repeat[None]      :긍정적결말암시
+[문장_시점] : TurnToIntro[Intro]        :(Blank)
+change time(-1 : exit) : 
+13
+presentTime : 13
+[과제_동사] : Conclude[Intro]   :(Blank)
+[전개_악역] : Repeat[None]      :악역처치
+[전개_노력전진] : Repeat[None]  :목표나아감
+[과제_오브젝트] : Repeat[None]  :오브젝트소개
+[과제_난이도] : Turn[Intro]     :(Blank)
+[전개_주변인물] : Repeat[None]  :인물이주인공에게도움을줌
+[전개_처벌보상] : Repeat[None]  :예상치못한보상
+[과제_심리규칙] : Repeat[None]  :인물의심리적규칙을소개
+[전개_예상] : Repeat[None]      :긍정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+14
+presentTime : 14
+[과제_동사] : Conclude[Intro]   :(Blank)
+[전개_악역] : Repeat[None]      :수준1_강력한적_등장
+[전개_노력전진] : Repeat[None]  :전진이멈춤
+[과제_오브젝트] : Repeat[None]  :오브젝트의발전
+[과제_난이도] : Conclude[Intro]         :(Blank)
+[전개_주변인물] : Repeat[None]  :주인공을배신
+[전개_처벌보상] : Repeat[None]  :고난
+[과제_심리규칙] : Repeat[None]  :심리규칙활용
+[전개_예상] : Repeat[None]      :부정적결말암시
+[문장_시점] : Turn[Intro]       :(Blank)
+change time(-1 : exit) : 
+15
+presentTime : 15
+[과제_동사] : Conclude[Intro]   :(Blank)
+[전개_악역] : Repeat[None]      :주인공을방해
+[전개_노력전진] : Repeat[None]  :노력
+[과제_오브젝트] : Repeat[None]  :오브젝트활용
+[과제_난이도] : Conclude[Intro]         :(Blank)
+[전개_주변인물] : Repeat[None]  :(Blank)
+[전개_처벌보상] : Repeat[None]  :(Blank)
+[과제_심리규칙] : Repeat[None]  :(Blank)
+[전개_예상] : Repeat[None]      :(Blank)
+[문장_시점] : Conclude[Intro]   :(Blank)
+change time(-1 : exit) : 
+16
+presentTime : 16
+[과제_동사] : Repeat[Intro]     :동사의_소개
+[전개_악역] : TurnToIntro[Intro]        :(Blank)
+[전개_노력전진] : TurnToIntro[Intro]    :(Blank)
+[과제_오브젝트] : TurnToIntro[Intro]    :(Blank)
+[과제_난이도] : Repeat[None]    :중간
+[전개_주변인물] : TurnToIntro[Intro]    :(Blank)
+[전개_처벌보상] : TurnToIntro[Intro]    :(Blank)
+[과제_심리규칙] : TurnToIntro[Intro]    :(Blank)
+[전개_예상] : Repeat[Intro]     :긍정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+17
+presentTime : 17
+[과제_동사] : Repeat[Intro]     :동사의_소개
+[전개_악역] : TurnToIntro[Intro]        :(Blank)
+[전개_노력전진] : TurnToIntro[Intro]    :(Blank)
+[과제_오브젝트] : TurnToIntro[Intro]    :(Blank)
+[과제_난이도] : Repeat[None]    :쉬움
+[전개_주변인물] : TurnToIntro[Intro]    :(Blank)
+[전개_처벌보상] : TurnToIntro[Intro]    :(Blank)
+[과제_심리규칙] : TurnToIntro[Intro]    :(Blank)
+[전개_예상] : Repeat[Intro]     :긍정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+18
+presentTime : 18
+[과제_동사] : Repeat[Intro]     :동사의발전
+[전개_악역] : TurnToIntro[Intro]        :(Blank)
+[전개_노력전진] : TurnToIntro[Intro]    :(Blank)
+[과제_오브젝트] : TurnToIntro[Intro]    :(Blank)
+[과제_난이도] : Repeat[None]    :중간
+[전개_주변인물] : TurnToIntro[Intro]    :(Blank)
+[전개_처벌보상] : TurnToIntro[Intro]    :(Blank)
+[과제_심리규칙] : TurnToIntro[Intro]    :(Blank)
+[전개_예상] : Repeat[Intro]     :부정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+19
+presentTime : 19
+[과제_동사] : Repeat[Intro]     :오브젝트와의관계
+[전개_악역] : TurnToIntro[Intro]        :(Blank)
+[전개_노력전진] : TurnToIntro[Intro]    :(Blank)
+[과제_오브젝트] : TurnToIntro[Intro]    :(Blank)
+[과제_난이도] : Repeat[None]    :쉬움
+[전개_주변인물] : TurnToIntro[Intro]    :(Blank)
+[전개_처벌보상] : TurnToIntro[Intro]    :(Blank)
+[과제_심리규칙] : TurnToIntro[Intro]    :(Blank)
+[전개_예상] : Repeat[Intro]     :(Blank)
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+20
+presentTime : 20
+[과제_동사] : Repeat[Intro]     :동사의_소개
+[전개_악역] : Repeat[Intro]     :(Blank)
+[전개_노력전진] : Repeat[Intro]         :(Blank)
+[과제_오브젝트] : Repeat[Intro]         :(Blank)
+[과제_난이도] : Repeat[None]    :(Blank)
+[전개_주변인물] : Repeat[Intro]         :(Blank)
+[전개_처벌보상] : Repeat[Intro]         :(Blank)
+[과제_심리규칙] : Repeat[Intro]         :(Blank)
+[전개_예상] : Repeat[Intro]     :긍정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+21
+presentTime : 21
+[과제_동사] : Repeat[Intro]     :동사의_소개
+[전개_악역] : Repeat[Intro]     :(Blank)
+[전개_노력전진] : Repeat[Intro]         :(Blank)
+[과제_오브젝트] : Repeat[Intro]         :(Blank)
+[과제_난이도] : Repeat[None]    :(Blank)
+[전개_주변인물] : Repeat[Intro]         :(Blank)
+[전개_처벌보상] : Repeat[Intro]         :(Blank)
+[과제_심리규칙] : Repeat[Intro]         :(Blank)
+[전개_예상] : Repeat[Intro]     :긍정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+22
+presentTime : 22
+[과제_동사] : Repeat[Intro]     :동사의발전
+[전개_악역] : Repeat[Intro]     :(Blank)
+[전개_노력전진] : Repeat[Intro]         :(Blank)
+[과제_오브젝트] : Repeat[Intro]         :(Blank)
+[과제_난이도] : Repeat[None]    :(Blank)
+[전개_주변인물] : Repeat[Intro]         :(Blank)
+[전개_처벌보상] : Repeat[Intro]         :(Blank)
+[과제_심리규칙] : Repeat[Intro]         :(Blank)
+[전개_예상] : Repeat[Intro]     :부정적결말암시
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+23
+presentTime : 23
+[과제_동사] : Repeat[Intro]     :오브젝트와의관계
+[전개_악역] : Repeat[Intro]     :(Blank)
+[전개_노력전진] : Repeat[Intro]         :(Blank)
+[과제_오브젝트] : Repeat[Intro]         :(Blank)
+[과제_난이도] : Repeat[None]    :(Blank)
+[전개_주변인물] : Repeat[Intro]         :(Blank)
+[전개_처벌보상] : Repeat[Intro]         :(Blank)
+[과제_심리규칙] : Repeat[Intro]         :(Blank)
+[전개_예상] : Repeat[Intro]     :(Blank)
+[문장_시점] : Repeat[Intro]     :(Blank)
+change time(-1 : exit) : 
+24
+presentTime : 24
+[과제_동사] : Repeat[Intro]     :동사의핵심을짚어냄
+[전개_악역] : Turn[Intro]       :(Blank)
+[전개_노력전진] : Turn[Intro]   :(Blank)
+[과제_오브젝트] : Turn[Intro]   :(Blank)
+[과제_난이도] : Repeat[None]    :중간
+[전개_주변인물] : Turn[Intro]   :(Blank)
+[전개_처벌보상] : Turn[Intro]   :(Blank)
+[과제_심리규칙] : Turn[Intro]   :(Blank)
+[전개_예상] : Turn[Intro]       :(Blank)
+[문장_시점] : Turn[Intro]       :(Blank)
+change time(-1 : exit) : 
