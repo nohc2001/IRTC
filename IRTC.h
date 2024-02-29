@@ -293,7 +293,12 @@ class ChangingValue
 						}
 						cv.cv[1] = IRTC::I;
 						// add cv1
-						int rrloc = (time - at) / (pastpo / 4);
+						int div = (pastpo / 4);
+						int rrloc = 0;
+						if(div != 0){
+							rrloc = (time - at) / div;
+						}
+						
 						switch (rrloc)
 						{
 						case 0:
