@@ -156,7 +156,7 @@ int main(){
                     ChangingValue *cv = table.table.at(i);
                     wcout << L"[" << cv->name.c_str() << L"] : " << flush;
                     IRTCV irtcv = cv->GetIRTC(pt);
-                    cout << "level : " << irtcv.start_level << "\tphaze : ";
+                    //cout << "level : " << irtcv.start_level << "\tphaze : ";
                     coutIRTC(irtcv.cv[0]);
                     cout << "[";
                     coutIRTC(irtcv.cv[1]);
@@ -166,11 +166,11 @@ int main(){
                     if (vp != nullptr)
                     {
                         wchar_t *temp = vp->p.str.value;
-                        wcout << L"value : " << temp << endl;
+                        wcout << temp << endl;
                     }
                     else
                     {
-                        cout << "value : (Blank)" << endl;
+                        cout << "(Blank)" << endl;
                     }
                 }
 
